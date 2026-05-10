@@ -4,7 +4,7 @@ import { companies } from "@/data/products";
 
 export default function TrustedCompanies() {
   return (
-    <section className="bg-slate-50 py-12 md:py-16" aria-labelledby="trusted-heading">
+    <section className="bg-white py-16 md:py-24" aria-labelledby="trusted-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p id="trusted-heading" className="text-center text-sm font-medium text-slate-500 uppercase tracking-wider">
           Trusted by leading companies worldwide

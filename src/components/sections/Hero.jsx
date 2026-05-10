@@ -98,13 +98,13 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Link
+            {/* <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-indigo-600 transition-all hover:bg-indigo-50 hover:shadow-xl hover:shadow-white/20"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-indigo-600 transition-all hover:bg-indigo-50 hover:shadow-xl hover:shadow-white/20"
             >
               Book Demo
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </Link> */}
             <Link
               href="/products"
               className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"

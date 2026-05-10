@@ -5,7 +5,7 @@ import Accordion from "@/components/ui/Accordion";
 
 export default function FAQ() {
   return (
-    <section className="bg-slate-50 py-16 md:py-24" aria-labelledby="faq-heading">
+    <section className="bg-white py-16 md:py-24" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">

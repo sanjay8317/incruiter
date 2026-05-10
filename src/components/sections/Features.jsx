@@ -63,7 +63,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="bg-slate-50 py-16 md:py-24" aria-labelledby="features-heading">
+          <section className="bg-white py-16 md:py-24" aria-labelledby="features-heading">
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">

@@ -60,7 +60,9 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsProductsOpen(!isProductsOpen)}
-                className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
+                // className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
+                              className="flex items-center gap-1 text-sm font-medium  transition-colors hover:text-slate-900 dark:hover:text-white"
+
                 aria-expanded={isProductsOpen}
                 aria-haspopup="true"
               >
@@ -96,7 +98,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
+              className="text-sm font-medium  transition-colors hover:text-slate-900 dark:hover:text-white"
               >
                 {link.label}
               </Link>
@@ -107,7 +109,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className="text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
+              className="text-sm font-medium  transition-colors hover:text-slate-900 dark:hover:text-white"
             >
               Book Demo
             </Link>
