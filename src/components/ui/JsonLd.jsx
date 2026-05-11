@@ -5,8 +5,8 @@
 
 export function OrganizationSchema({
   name = "InCruiter",
-  url = "https://incruiter.com",
-  logo = "https://incruiter.com/logo.png",
+  url = "https://incruiter-liard.vercel.app",
+  logo = "https://incruiter-liard.vercel.app/logo.png",
   description = "AI-powered interview and hiring solutions for modern recruitment teams.",
   email = "hello@incruiter.com",
   telephone = "+1 (234) 567-890",
@@ -58,13 +58,13 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "InCruiter",
-    url: "https://incruiter.com",
+    url: "https://incruiter-liard.vercel.app",
     
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://incruiter.com/search?q={search_term_string}",
+        urlTemplate: "https://incruiter-liard.vercel.app/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },

@@ -5,7 +5,7 @@
  * - Sets change frequency for proper indexing
  */
 export default function sitemap() {
-  const baseUrl = "https://incruiter.com";
+  const baseUrl = "https://incruiter-liard.vercel.app";
 
   return [
     {

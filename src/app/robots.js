@@ -10,6 +10,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://incruiter.com/sitemap.xml",
+    sitemap: "https://incruiter-liard.vercel.app/sitemap.xml",
   };
 }
