@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { useTheme } from "@/context/ThemeContext";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/products", label: "Products" },
@@ -15,6 +17,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
@@ -49,10 +52,12 @@ export default function Navbar() {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
             aria-label="InCruiter Home"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
+            {/* <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600">
               <span className="text-lg font-bold text-white">I</span>
             </div>
-            <span className="text-xl font-bold text-slate-900 dark:text-white">InCruiter</span>
+            <span className="text-xl font-bold text-slate-900 dark:text-white">InCruiter</span> */}
+            <Image src={'\incruiter-new-logo.svg'} alt="logo" height={100} width={100} />
+            
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,8 +66,11 @@ export default function Navbar() {
               <button
                 onClick={() => setIsProductsOpen(!isProductsOpen)}
                 // className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
-                              className="flex items-center gap-1 text-sm font-medium  transition-colors hover:text-slate-900 dark:hover:text-white"
-
+                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-slate-900 dark:hover:text-white ${
+                  pathname.startsWith("/products")
+                    ? "text-teal-600 dark:text-teal-400 underline decoration-teal-500 decoration-2 underline-offset-4"
+                    : "text-slate-600 dark:text-slate-300"
+                }`}
                 aria-expanded={isProductsOpen}
                 aria-haspopup="true"
               >
@@ -94,15 +102,22 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            {navLinks.slice(1).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-              className="text-sm font-medium  transition-colors hover:text-slate-900 dark:hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.slice(1).map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-slate-900 dark:hover:text-white ${
+                    isActive
+                      ? "text-teal-600 dark:text-teal-400 underline decoration-teal-500 decoration-2 underline-offset-4"
+                      : "text-slate-600 dark:text-slate-300"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop CTAs */}
@@ -153,16 +168,23 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute left-0 right-0 top-16 bg-white dark:bg-slate-900 shadow-xl">
             <div className="flex flex-col gap-1 p-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-600 dark:text-slate-300 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href || (link.href === '/products' && pathname.startsWith('/products'));
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`rounded-lg px-4 py-3 text-base font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white ${
+                      isActive
+                        ? "text-teal-600 dark:text-teal-400 underline decoration-teal-500 decoration-2 underline-offset-4"
+                        : "text-slate-600 dark:text-slate-300"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <div className="my-2 border-t border-slate-200 dark:border-slate-700" />
               <Link
                 href="/contact"

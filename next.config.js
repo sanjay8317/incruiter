@@ -8,6 +8,13 @@ const nextConfig = {
   reactStrictMode: true,
 
   /**
+   * ✅ Disable Next.js dev indicator (the "N" logo)
+   */
+  devIndicators: {
+    buildActivity: false,
+  },
+
+  /**
    * SEO & Performance:
    * - Powered by header for security (optional)
    * - trailingSlash: false for cleaner URLs

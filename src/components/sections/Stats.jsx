@@ -28,8 +28,6 @@ function AnimatedCounter({ value, label }) {
     if (!isVisible) return;
 
     const numValue = parseFloat(value.replace(/[^0-9.]/g, ""));
-    const hasPlus = value.includes("+");
-    const hasPercent = value.includes("%");
 
     const duration = 2000;
     const steps = 60;

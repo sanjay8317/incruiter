@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { OrganizationSchema, WebSiteSchema } from "@/components/ui/JsonLd";
 import { ThemeProvider } from "@/context/ThemeContext";
+import UTMHandler from "@/components/UTMHandler";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen flex flex-col bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
         <ThemeProvider>
+          <UTMHandler />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
